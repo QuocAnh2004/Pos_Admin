@@ -1,0 +1,9 @@
+/* Màn hình POS: nút to, dễ chạm bằng ngón tay */
+body { background: #f4f6f9; }
+.pos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.pos-product { min-height: 96px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
+.pos-product .price { font-variant-numeric: tabular-nums; }
+.pos-cart { position: sticky; top: 16px; }
+.pos-cart .total { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.btn-checkout { min-height: 64px; font-size: 1.25rem; }
+.stat-number { font-size: 2.2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
