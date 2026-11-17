@@ -22,17 +22,18 @@ export class Product {
   //        gợi ý: @ManyToOne(() => Category) + @JoinColumn({ name: 'category_id' })
   //        (giống @ManyToOne + @JoinColumn trong JPA)
 
-  @Column({length: 120, unique:true})
+  @Column({length: 120})
   name: string;
 
   @Column({type:'int'})
   price: number;
-  
+
   @Column({default: true})
   active: boolean;
 
   @Column({type:'int'})
   categoryId: number;
+  
   @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
   category: Category;

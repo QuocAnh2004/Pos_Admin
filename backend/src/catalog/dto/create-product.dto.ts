@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsBoolean, IsInt, IsNotEmpty, IsOptional, IsString, MaxLength, Min } from 'class-validator';
 
 /**
  * Dữ liệu client gửi lên khi tạo món mới (POST /api/products).
@@ -14,11 +14,17 @@ export class CreateProductDto {
 
   // TODO(T-06): thêm decorator để bắt buộc price là số nguyên > 0
   //   gợi ý: @IsInt() và @Min(...)
+  @IsInt()
+  @Min(0, {message: 'Giá món phải là số nguyên dương'})
   price: number;
 
   // TODO(T-06): categoryId là số nguyên dương
+  @IsInt()
+  @Min(1)
   categoryId: number;
 
   // TODO(T-06): active là boolean và không bắt buộc (@IsOptional)
+  @IsOptional()
+  @IsBoolean()
   active?: boolean;
 }
